@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class LoginPage {
@@ -29,10 +28,10 @@ public class LoginPage {
         webDriver.findElement(passwordField).sendKeys(password);
     }
 
-    public InboxPage clickLoginButton(boolean navigatesToNewPage) {
+    public InboxPage clickLoginButton(boolean navigatesToInboxPage) {
 
         webDriver.findElement(loginButton).click();
-        if (navigatesToNewPage) {
+        if (navigatesToInboxPage) {
             new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(loginButton));
             return new InboxPage(webDriver);
         }

@@ -11,10 +11,14 @@ public class LoginTests extends BaseTest {
 
     @Test
     public void testSuccessfulLogin() {
+
+        String username = "ani.ghaz.t";
+        String password = "Yantest1!";
+
         LoginPage loginPage = homePage.clickLoginButton();
-        loginPage.setUsername("ani.ghaz.t");
+        loginPage.setUsername(username);
         loginPage.clickLoginButton(false);
-        loginPage.setPassword("Ghazaryan1!");
+        loginPage.setPassword(password);
         InboxPage inboxPage = loginPage.clickLoginButton(true);
         String composeLetterButtonText = inboxPage.getComposeLetterButtonText();
         assertTrue(composeLetterButtonText.contains("Написать"),"User is not logged in");

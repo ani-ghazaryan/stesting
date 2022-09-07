@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class HomePage {
 
@@ -26,4 +24,5 @@ public class HomePage {
         new WebDriverWait(webDriver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(By.className("AuthLoginInputToggle-input")));
         return new LoginPage(webDriver);
     }
+
 }
